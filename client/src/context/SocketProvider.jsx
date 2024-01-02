@@ -9,7 +9,10 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-	const socket = useMemo(() => io("192.168.1.18:8000"), []);
+	const socket = useMemo(
+		() => io("https://videocallingusingwebrtc.onrender.com"),
+		[]
+	);
 
 	return (
 		<SocketContext.Provider value={socket}>
